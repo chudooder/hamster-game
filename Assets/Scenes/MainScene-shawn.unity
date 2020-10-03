@@ -334,10 +334,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2011826532}
     m_Modifications:
-    - target: {fileID: -3570157963014819529, guid: 8bd8b996196d200409c5032be114aa88, type: 3}
-      propertyPath: mechMovement
-      value: 
-      objectReference: {fileID: 1945705871}
     - target: {fileID: 6977773505937307422, guid: 8bd8b996196d200409c5032be114aa88, type: 3}
       propertyPath: m_Name
       value: FrontHamsterWheel
@@ -597,7 +593,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MAX_SPEED: 30
-  speed: 20
+  speed: 0
   deceleration: 2
   speedPerClick: 2
 --- !u!1 &1969337169

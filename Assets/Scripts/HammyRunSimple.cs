@@ -4,24 +4,22 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine;
 
-public class HammyRun : MonoBehaviour
+public class HammyRunSimple : HammyRun
 {
     public float RotMaxFactor = 20;
     public float SpeedFactor = 2;
 
-    private MechMovement mechMovement;
     private float _startRot;
     
     private void Start()
     {
-        mechMovement = GetComponentInParent<MechMovement>();
         _startRot = transform.localRotation.eulerAngles.z;
         StartCoroutine(HammyRunRoutine());
     }
 
-    private void Update() {
-        this.SpeedFactor = 0.02f * mechMovement.speed;
-        this.RotMaxFactor = 1.5f * mechMovement.speed;
+    public override void SetSpeed(float speed) {
+        this.SpeedFactor = 0.02f * speed;
+        this.RotMaxFactor = 1.5f * speed;
     }
 
     IEnumerator HammyRunRoutine()
