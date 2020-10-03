@@ -8,18 +8,25 @@ public class HammyRun : MonoBehaviour
 {
     public float RotMaxFactor = 20;
     public float SpeedFactor = 2;
-    
+
+    private MechMovement mechMovement;
     private float _startRot;
     
     private void Start()
     {
-        _startRot = transform.rotation.eulerAngles.z;
+        mechMovement = GetComponentInParent<MechMovement>();
+        _startRot = transform.localRotation.eulerAngles.z;
         StartCoroutine(HammyRunRoutine());
+    }
+
+    private void Update() {
+        this.SpeedFactor = 0.02f * mechMovement.speed;
+        this.RotMaxFactor = 1.5f * mechMovement.speed;
     }
 
     IEnumerator HammyRunRoutine()
     {
-        Quaternion startRot = transform.rotation;
+        Quaternion startRot = transform.localRotation;
         float t;
         Quaternion target, start;
         
@@ -27,47 +34,47 @@ public class HammyRun : MonoBehaviour
         {
             t = 0;
             target = Quaternion.Euler(0,0, _startRot + RotMaxFactor);
-            start = transform.rotation;
+            start = transform.localRotation;
             while (t <= 1)
             {
-                transform.rotation = Quaternion.Slerp(start, target, t);
+                transform.localRotation = Quaternion.Slerp(start, target, t);
                 yield return null;
                 t += Time.deltaTime * RotMaxFactor * SpeedFactor;
             }
-            transform.rotation = target;
+            transform.localRotation = target;
             
             t = 0;
             target = Quaternion.Euler(0,0, _startRot);
-            start = transform.rotation;
+            start = transform.localRotation;
             while (t <= 1)
             {
-                transform.rotation = Quaternion.Slerp(start, target, t);
+                transform.localRotation = Quaternion.Slerp(start, target, t);
                 yield return null;
                 t += Time.deltaTime * RotMaxFactor * SpeedFactor;
             }
-            transform.rotation = target;
+            transform.localRotation = target;
 
             t = 0;
             target = Quaternion.Euler(0,0, _startRot - RotMaxFactor);
-            start = transform.rotation;
+            start = transform.localRotation;
             while (t <= 1)
             {
-                transform.rotation = Quaternion.Slerp(start, target, t);
+                transform.localRotation = Quaternion.Slerp(start, target, t);
                 yield return null;
                 t += Time.deltaTime * RotMaxFactor * SpeedFactor;
             }
-            transform.rotation = target;
+            transform.localRotation = target;
             
             t = 0;
             target = Quaternion.Euler(0,0, _startRot);
-            start = transform.rotation;
+            start = transform.localRotation;
             while (t <= 1)
             {
-                transform.rotation = Quaternion.Slerp(start, target, t);
+                transform.localRotation = Quaternion.Slerp(start, target, t);
                 yield return null;
                 t += Time.deltaTime * RotMaxFactor * SpeedFactor;
             }
-            transform.rotation = target;
+            transform.localRotation = target;
             yield return null;
         }
     }

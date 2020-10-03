@@ -6,17 +6,14 @@ using UnityEngine;
 public class SpinToWin : MonoBehaviour
 {
     public float Speed = 3;
-    private void Start()
-    {
-        StartCoroutine(SpinRoutine());
+    private MechMovement mechMovement;
+
+    private void Awake() {
+        this.mechMovement = GetComponentInParent<MechMovement>();
     }
 
-    IEnumerator SpinRoutine()
-    {
-        while (true)
-        {
-            transform.Rotate(0,0,Speed * Time.deltaTime);
-            yield return null;
-        }
+    private void Update() {
+        this.Speed = -mechMovement.speed * 20;
+        transform.Rotate(0, 0, Speed * Time.deltaTime);
     }
 }
