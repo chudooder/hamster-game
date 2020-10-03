@@ -9,12 +9,21 @@ public class Rocket : MonoBehaviour
     public float RotationSpeed = 3;
     public float RocketMoveSpeed = 3;
 
-    private Transform _target;
+    [SerializeField] private GameObject _thrust;
     
+    private Transform _target;
+
+    private void Start()
+    {
+        _thrust.SetActive(false);
+    }
+
+
     private IEnumerator FireRoutine(Transform target)
     {
         _target = target;
-        
+        _thrust.SetActive(true);
+
         float t = 0;
         while (t <= RocketLifetime)
         {
@@ -25,6 +34,8 @@ public class Rocket : MonoBehaviour
             transform.position += RocketMoveSpeed * Time.deltaTime * transform.TransformDirection(Vector2.right);
             t += Time.deltaTime;
         }
+
+        OnTimeout();
     }
 
     public virtual void OnHit()
@@ -33,12 +44,18 @@ public class Rocket : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public virtual void OnTimeout()
+    {
+        Destroy(gameObject);
+    }
+    
     public virtual void Fire(Transform target)
     {
+        transform.parent = null;
         StartCoroutine(FireRoutine(target));
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.transform == _target)
         {
