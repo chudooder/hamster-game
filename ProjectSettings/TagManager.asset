@@ -13,7 +13,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Clickable
   - 
   - 
   - 
@@ -40,4 +40,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: MechBack
+    uniqueID: 313326759
+    locked: 0
+  - name: Mech
+    uniqueID: 468472425
+    locked: 0
+  - name: MechFront
+    uniqueID: 1760659763
     locked: 0
