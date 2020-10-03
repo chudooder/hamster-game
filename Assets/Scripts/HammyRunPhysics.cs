@@ -5,11 +5,15 @@ using UnityEngine;
 public class HammyRunPhysics : HammyRun
 {
     public float SLIP_DOWN_FACTOR = 5;
-    private float speed = 0;
-    private float angle;
-    private float angularVel; // relative to wheel
-    private float angularAccel;
+    public float speed = 0;
+    public float angle;
+    public float angularVel; // relative to wheel
+    public float angularAccel;
+    public float slipDownVel;
+    public float wheelAngularVel;
     private float lastSpeed;
+    public float direction;
+    private bool speedUpRequested;
 
     // Start is called before the first frame update
     void Start()
@@ -20,28 +24,42 @@ public class HammyRunPhysics : HammyRun
 
     void FixedUpdate()
     {
-        float currentSpeed = speed;
-        if (currentSpeed > lastSpeed) {
-            this.angularAccel = 50000;
+        // direction hamster is running. opposite of motion of wheel/apparatus
+        this.direction = -Mathf.Sign(speed);
+        if (speedUpRequested) {
+            this.angularAccel = 50000 * direction;
         } else {
-            this.angularAccel = -400;
+            this.angularAccel = -400 * direction;
         }
-        float wheelAngularVel = -20 * speed;
+        wheelAngularVel = 20 * speed;
         // Slip down the sides of the wheel
-        float slipDownVel = this.angle * -SLIP_DOWN_FACTOR;
-        this.angularVel = Mathf.Clamp(this.angularVel + this.angularAccel * Time.fixedDeltaTime, 0, -wheelAngularVel * 1.2f);
-        this.angle += (this.angularVel + wheelAngularVel + slipDownVel) * Time.fixedDeltaTime;
+        slipDownVel = this.angle * -SLIP_DOWN_FACTOR;
+        if (direction > 0) {
+            this.angularVel = Mathf.Clamp(this.angularVel + this.angularAccel * Time.fixedDeltaTime, wheelAngularVel * 1.2f, 0);
+        } else if (direction < 0) {
+            Debug.Log("new vel: " + this.angularVel + this.angularAccel * Time.fixedDeltaTime);
+            this.angularVel = Mathf.Clamp(this.angularVel + this.angularAccel * Time.fixedDeltaTime, 0, wheelAngularVel * 1.2f);
+        }
+
+        float change = (this.angularVel + wheelAngularVel + slipDownVel) * Time.fixedDeltaTime;
+
+        this.angle += change;
         if (this.angle < -180f) {
             this.angle += 360;
         } else if (this.angle > 180f) {
             this.angle -= 360;
         }
 
-        lastSpeed = currentSpeed;
+        speedUpRequested = false;
+        lastSpeed = speed;
         transform.localRotation = Quaternion.Euler(0, 0, angle);
     }
 
     public override void SetSpeed(float speed) {
+        speed = -speed;
+        if (Mathf.Abs(this.speed) < Mathf.Abs(speed)) {
+            speedUpRequested = true;
+        }
         this.speed = speed;
     }
 }
