@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "HamsterDefaults", menuName = "ScriptableObjects/Hamsters", order = 0)]
+[CreateAssetMenu(fileName = "HamsterDefaults", menuName = "ScriptableObjects/HamsterData", order = 0)]
 public class HamsterDefaultValues : ScriptableObject
 {
     public List<Color> bodyColors;

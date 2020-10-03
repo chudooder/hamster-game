@@ -4,14 +4,17 @@ using UnityEngine;
 public class Hamster : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer body;
-    [SerializeField] private SpriteRenderer belly;
+    [SerializeField] private List<SpriteRenderer> belly;
     private HamsterData _hamsterData;
     
     public void Initialize(HamsterData hamsterData)
     {
         _hamsterData = hamsterData;
         body.color = _hamsterData.bodyColor;
-        belly.color = _hamsterData.bellyColor;
+        foreach (SpriteRenderer sprite in belly)
+        {
+            sprite.color = _hamsterData.bellyColor;
+        }
     }
 
 }
