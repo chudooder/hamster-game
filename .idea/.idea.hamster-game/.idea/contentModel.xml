@@ -8,6 +8,7 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="HammyRun.cs" t="Include" />
+          <e p="SpinToWin.cs" t="Include" />
         </e>
       </e>
       <e p="hamster-game.sln" t="IncludeFlat" />
