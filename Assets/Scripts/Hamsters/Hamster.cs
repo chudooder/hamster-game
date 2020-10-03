@@ -1,18 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class Hamster : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private SpriteRenderer body;
+    [SerializeField] private SpriteRenderer belly;
+    private HamsterData _hamsterData;
+    
+    public void Initialize(HamsterData hamsterData)
     {
-        
+        _hamsterData = hamsterData;
+        body.color = _hamsterData.bodyColor;
+        belly.color = _hamsterData.bellyColor;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
