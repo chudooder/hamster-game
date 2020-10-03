@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HammyRunPhysics : MonoBehaviour
+public class HammyRunPhysics : HammyRun
 {
-    private MechMovement mechMovement;
     public float SLIP_DOWN_FACTOR = 5;
+    private float speed = 0;
     private float angle;
     private float angularVel; // relative to wheel
     private float angularAccel;
@@ -14,20 +14,19 @@ public class HammyRunPhysics : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.mechMovement = GetComponentInParent<MechMovement>();
         this.angle = 0f;
-        this.lastSpeed = mechMovement.speed;
+        this.lastSpeed = speed;
     }
 
     void FixedUpdate()
     {
-        float currentSpeed = mechMovement.speed;
+        float currentSpeed = speed;
         if (currentSpeed > lastSpeed) {
             this.angularAccel = 50000;
         } else {
             this.angularAccel = -400;
         }
-        float wheelAngularVel = -20 * mechMovement.speed;
+        float wheelAngularVel = -20 * speed;
         // Slip down the sides of the wheel
         float slipDownVel = this.angle * -SLIP_DOWN_FACTOR;
         this.angularVel = Mathf.Clamp(this.angularVel + this.angularAccel * Time.fixedDeltaTime, 0, -wheelAngularVel * 1.2f);
@@ -40,5 +39,9 @@ public class HammyRunPhysics : MonoBehaviour
 
         lastSpeed = currentSpeed;
         transform.localRotation = Quaternion.Euler(0, 0, angle);
+    }
+
+    public override void SetSpeed(float speed) {
+        this.speed = speed;
     }
 }
