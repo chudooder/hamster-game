@@ -97,6 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d72e4909f6d1c4545bb9aeff381de64f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bodyColor: {r: 0, g: 0, b: 0, a: 0}
+  legColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1816404584794189496
 GameObject:
   m_ObjectHideFlags: 0

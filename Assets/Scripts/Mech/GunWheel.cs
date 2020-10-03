@@ -8,11 +8,14 @@ public class GunWheel : MonoBehaviour, IPointerClickHandler {
     public float ACCEL = 60f;
     public float DECEL = 30f;
     private float speed;
+    private HammyRun hammyRun;
+    private SpinToWin spin;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        hammyRun = GetComponentInChildren<HammyRun>();
+        spin = GetComponentInChildren<SpinToWin>();
     }
 
     // Update is called once per frame
@@ -25,6 +28,9 @@ public class GunWheel : MonoBehaviour, IPointerClickHandler {
         } else {
             speed = Mathf.Min(0, speed + DECEL * Time.deltaTime);
         }
+
+        spin.Speed = 5 * speed;
+        hammyRun.SetSpeed(0.25f * speed);
     }
 
     public void OnPointerClick(PointerEventData eventData) {
