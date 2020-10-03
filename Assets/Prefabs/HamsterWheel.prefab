@@ -157,7 +157,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 146210834755013488}
-  - component: {fileID: 146210834755013495}
+  - component: {fileID: 4712053713209198156}
   m_Layer: 0
   m_Name: wheelcenterhammy
   m_TagString: Untagged
@@ -180,7 +180,7 @@ Transform:
   m_Father: {fileID: 146210834353263140}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &146210834755013495
+--- !u!114 &4712053713209198156
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -189,11 +189,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 146210834755013489}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8dcf3c5898d32448ba56b503b1e6f1c, type: 3}
+  m_Script: {fileID: 11500000, guid: 77c3ff313e7040141bab8009bb84338b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotMaxFactor: 30
-  SpeedFactor: 0.2
+  SLIP_DOWN_FACTOR: 5
+  angle: 0
+  angularVel: 0
+  angularAccel: 0
+  slipDownVel: 0
 --- !u!1 &146210834790875251
 GameObject:
   m_ObjectHideFlags: 0
