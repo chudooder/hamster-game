@@ -14,6 +14,7 @@ public class Gun : MonoBehaviour
     [SerializeField] private AnimationCurve _barrelRestoreCurve;
     [SerializeField] private Transform _barrel;
     [SerializeField] private GameObject _muzzleFlash;
+    [SerializeField] private AudioSource _audioSource;
 
     private float _barrelStartX;
     private float _barrelY;
@@ -22,7 +23,8 @@ public class Gun : MonoBehaviour
     private Coroutine _barrelRoutine;
     private Coroutine _flashRoutine;
     private float _t = 0;
-    
+    private AudioClip _audioClip;
+
     void Awake()
     {
         _barrelStartX = _barrel.transform.localPosition.x;
@@ -30,6 +32,7 @@ public class Gun : MonoBehaviour
         _barrelEndX = _barrelStartX - _barrelForce;
         
         _muzzleFlash.SetActive(false);
+        _audioClip = _audioSource.clip;
     }
 
     // Update is called once per frame
@@ -42,6 +45,9 @@ public class Gun : MonoBehaviour
     
         if (_flashRoutine != null) StopCoroutine(_flashRoutine);
         _flashRoutine = StartCoroutine(FlashRoutine());
+
+        _audioSource.pitch = UnityEngine.Random.Range(0.95f, 1.05f);
+        _audioSource.PlayOneShot(_audioClip);
     }
 
     private IEnumerator BarrelRoutine()
