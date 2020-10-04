@@ -37,7 +37,6 @@ public class HammyRunPhysics : HammyRun
         if (direction > 0) {
             this.angularVel = Mathf.Clamp(this.angularVel + this.angularAccel * Time.fixedDeltaTime, wheelAngularVel * 1.2f, 0);
         } else if (direction < 0) {
-            Debug.Log("new vel: " + this.angularVel + this.angularAccel * Time.fixedDeltaTime);
             this.angularVel = Mathf.Clamp(this.angularVel + this.angularAccel * Time.fixedDeltaTime, 0, wheelAngularVel * 1.2f);
         }
 
