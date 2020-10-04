@@ -154,14 +154,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 100
   ScoreMultiplier: 1
-  mainMenuScene:
-    m_Handle: 0
-  storeScene:
-    m_Handle: 0
-  loadOutScene:
-    m_Handle: 0
-  gameScene:
-    m_Handle: 0
+  mainMenuScene: 
+  storeScene: 
+  loadOutScene: 
+  gameScene: 
 --- !u!4 &319231429
 Transform:
   m_ObjectHideFlags: 0
