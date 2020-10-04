@@ -30,9 +30,12 @@
           <e p="IHammyRun.cs" t="Include" />
           <e p="Mech" t="Include">
             <e p="BidirectionalWheel.cs" t="Include" />
+            <e p="Bullet.cs" t="Include" />
             <e p="ClickHandler.cs" t="Include" />
             <e p="FrontWheel.cs" t="Include" />
+            <e p="Gun.cs" t="Include" />
             <e p="MechMovement.cs" t="Include" />
+            <e p="ShootWheel.cs" t="Include" />
           </e>
           <e p="SpinToWin.cs" t="Include" />
         </e>

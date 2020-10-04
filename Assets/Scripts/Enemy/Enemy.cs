@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
 
     public Rocket RocketPrefab;
     public float Speed = 2;
+    public int Health = 4;
 
     
     [SerializeField] private Transform[] _rocketLoadLocations;
@@ -35,7 +36,7 @@ public class Enemy : MonoBehaviour
     public EnemyEyes Eyes => (_eyes != null)? _eyes : _eyes = GetComponentInChildren<EnemyEyes>(); 
     private EnemyRocketLauncher _rocketLauncher;
     public EnemyRocketLauncher RocketLauncher => (_rocketLauncher != null)? _rocketLauncher : _rocketLauncher = GetComponentInChildren<EnemyRocketLauncher>(); 
-
+    
     private void Awake()
     {
         _eyes = GetComponentInChildren<EnemyEyes>();
@@ -72,6 +73,17 @@ public class Enemy : MonoBehaviour
             yield return Idle(4, angle);
             yield return null;
         }
+    }
+
+    public void Damage(int damage)
+    {
+        Health -= damage;
+        if (Health <= 0) Delete();
+    }
+
+    public void Delete()
+    {
+        Destroy(gameObject);
     }
 
     private IEnumerator PathToPoint(float angle)

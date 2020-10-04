@@ -20,6 +20,9 @@ TextureImporter:
   - first:
       213: -2140054705378549751
     second: gun_2
+  - first:
+      213: -6513206380828838369
+    second: gun_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -110,9 +113,9 @@ TextureImporter:
       name: gun_0
       rect:
         serializedVersion: 2
-        x: 278
+        x: 74
         y: 157
-        width: 387
+        width: 57
         height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -131,10 +134,10 @@ TextureImporter:
       name: gun_1
       rect:
         serializedVersion: 2
-        x: 740
-        y: 122
-        width: 135
-        height: 81
+        x: 278
+        y: 157
+        width: 387
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,6 +155,27 @@ TextureImporter:
       name: gun_2
       rect:
         serializedVersion: 2
+        x: 740
+        y: 122
+        width: 135
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 900220e759ffc42e0800000000000000
+      internalID: -2140054705378549751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gun_3
+      rect:
+        serializedVersion: 2
         x: 0
         y: 0
         width: 855
@@ -163,8 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 900220e759ffc42e0800000000000000
-      internalID: -2140054705378549751
+      spriteID: f16b3e91e417c95a0800000000000000
+      internalID: -6513206380828838369
       vertices: []
       indices: 
       edges: []
