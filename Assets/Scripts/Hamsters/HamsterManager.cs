@@ -12,6 +12,8 @@ public class HamsterManager : MonoBehaviour
     private List<HamsterData> hamsters;
     [SerializeField] private HamsterDefaultValues hamsterDefaultValues;
     [SerializeField] private GameObject hamsterPrefab;
+    [SerializeField] private readonly int ScoreNeededToMature;
+    [SerializeField] private readonly int ScoreNeededToBeBorn;
 
     private void Awake()
     {
@@ -48,7 +50,7 @@ public class HamsterManager : MonoBehaviour
         Color bodyColor = hamsterDefaultValues.bodyColors[Random.Range(0, hamsterDefaultValues.bodyColors.Count)];
         String firstName = hamsterDefaultValues.firstNames[Random.Range(0, hamsterDefaultValues.firstNames.Count)];
         String lastName = hamsterDefaultValues.lastNames[Random.Range(0, hamsterDefaultValues.lastNames.Count)];
-        HamsterData hamster = new HamsterData(bodyColor, bellyColor, firstName,lastName);
+        HamsterData hamster = new HamsterData(bodyColor, bellyColor, firstName,lastName, HamsterStatus.Adult);
         return hamster;
     }
     
