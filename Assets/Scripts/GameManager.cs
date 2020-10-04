@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
     private int _currentScore = 0;
     private int _overallScore = 0;
     private int _currentHealth = 0;
+
+    public int CurrentScore => _currentScore;
+    public int CurrentHealth => _currentHealth;
     
     // Settings Variables
     [SerializeField] private int MaxHealth = 100;
