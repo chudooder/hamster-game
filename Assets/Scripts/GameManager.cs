@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,9 +11,15 @@ public class GameManager : MonoBehaviour
     private int _currentHealth = 0;
     
     // Settings Variables
-    [SerializeField] private readonly int MaxHealth = 100;
-    [SerializeField] private readonly int ScoreMultiplier = 1; // multiply this by the distance and add the score
+    [SerializeField] private int MaxHealth = 100;
+    [SerializeField] private int ScoreMultiplier = 1; // multiply this by the distance and add the score
     
+    // Scenes
+    [SerializeField] private Scene mainMenuScene; 
+    [SerializeField] private Scene storeScene;
+    [SerializeField] private Scene loadOutScene;
+    [SerializeField] private Scene gameScene;
+
     private void Awake()
     {
         // if the singleton hasn't been initialized yet
@@ -30,28 +37,29 @@ public class GameManager : MonoBehaviour
     {
         _currentHealth = MaxHealth;
         _currentScore = 0;
-        //todo change scenes
+        SceneManager.LoadScene(gameScene.name);
         //todo enable overlay
+        //todo update overlay
         //todo spawn hamsters chosen by user in relevant places
     }
 
     public void AddDistance(int distance)
     {
         _currentScore += ScoreMultiplier * distance;
-        //TODO update UI
+        //TODO update overlay
         //TODO check/update maturity of baby hamsters
     }
     
     public void Repair(int repairAmount)
     {
         _currentHealth += repairAmount;
-        //TODO update UI
+        //TODO update overlay
     }
 
     public void Damage(int damage)
     {
         _currentHealth -= damage;
-        //TODO update UI
+        //TODO update overlay
         if (_currentHealth < 0)
         {
             EndRun();
@@ -63,6 +71,7 @@ public class GameManager : MonoBehaviour
         //TODO play death/run end animation
         //TODO change scene
         _overallScore += _currentScore;
+        SceneManager.LoadScene(storeScene.name);
     }
 
 }

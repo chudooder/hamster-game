@@ -6,14 +6,14 @@ using Random = UnityEngine.Random;
 public class HamsterManager : MonoBehaviour
 {
     private static HamsterManager instance;
-    private static readonly int MinHamstersinGame = 3;
-    private static readonly int MaxHamstersInGame = 6;
+    private static int MinHamstersinGame = 3;
+    private static int MaxHamstersInGame = 6;
    
     private List<HamsterData> hamsters;
     [SerializeField] private HamsterDefaultValues hamsterDefaultValues;
     [SerializeField] private GameObject hamsterPrefab;
-    [SerializeField] private readonly int ScoreNeededToMature;
-    [SerializeField] private readonly int ScoreNeededToBeBorn;
+    [SerializeField] private int ScoreNeededToMature;
+    [SerializeField] private int ScoreNeededToBeBorn;
 
     private void Awake()
     {
