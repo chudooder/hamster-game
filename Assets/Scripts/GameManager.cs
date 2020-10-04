@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Object = UnityEngine.Object;
 
 public class GameManager : MonoBehaviour
 {
@@ -19,10 +20,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int ScoreMultiplier = 1; // multiply this by the distance and add the score
     
     // Scenes
-    [SerializeField] private Scene mainMenuScene; 
-    [SerializeField] private Scene storeScene;
-    [SerializeField] private Scene loadOutScene;
-    [SerializeField] private Scene gameScene;
+    [SerializeField] private Object mainMenuScene; 
+    [SerializeField] private Object storeScene;
+    [SerializeField] private Object loadOutScene;
+    [SerializeField] private Object gameScene;
 
     public int MaxHealth => _maxHealth;
     public int CurrentScore => _currentScore;
@@ -42,7 +43,8 @@ public class GameManager : MonoBehaviour
  
         instance = this;
         DontDestroyOnLoad(gameObject);
-        
+        SceneManager.activeSceneChanged += OnSceneChanged;
+
         _currentHealth = _maxHealth;
         _currentScore = 0;
     }
@@ -53,8 +55,15 @@ public class GameManager : MonoBehaviour
         _currentScore = 0;
         SceneManager.LoadScene(gameScene.name);
         //todo enable overlay
-        //todo update overlay
         //todo spawn hamsters chosen by user in relevant places
+    }
+
+    private void OnSceneChanged(Scene old, Scene next)
+    {
+        if (next.name.Equals(gameScene.name))
+        {
+            HamsterManager.instance.BeginRun();
+        }
     }
 
     public void AddDistance(int distance)
