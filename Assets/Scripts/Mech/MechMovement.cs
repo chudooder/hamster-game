@@ -8,6 +8,7 @@ public class MechMovement : MonoBehaviour
     [HideInInspector] public float speed = 20f; // degrees per second
     public float deceleration = 2f; // degrees per second squared
     public float speedPerClick = 2f;
+    public float scoreModifier = 10000;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,7 @@ public class MechMovement : MonoBehaviour
     {
         this.speed = Mathf.Clamp(this.speed - deceleration * Time.deltaTime, 0, MAX_SPEED);
         this.transform.Rotate(new Vector3(0, 0, speed * Time.deltaTime));
+        GameManager.instance.AddScore((int)(this.speed * Time.deltaTime * scoreModifier));
     }
 
     public void IncreaseSpeed() {

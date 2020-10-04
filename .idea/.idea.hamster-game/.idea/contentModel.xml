@@ -26,7 +26,6 @@
             <e p="Item.cs" t="Include" />
             <e p="Stats.cs" t="Include" />
           </e>
-          <e p="HealthBar.cs" t="Include" />
           <e p="IHammyRun.cs" t="Include" />
           <e p="Mech" t="Include">
             <e p="BidirectionalWheel.cs" t="Include" />
@@ -38,6 +37,10 @@
             <e p="ShootWheel.cs" t="Include" />
           </e>
           <e p="SpinToWin.cs" t="Include" />
+          <e p="UI" t="Include">
+            <e p="HealthBar.cs" t="Include" />
+            <e p="ScoreDisplay.cs" t="Include" />
+          </e>
         </e>
       </e>
       <e p="hamster-game.sln" t="IncludeFlat" />

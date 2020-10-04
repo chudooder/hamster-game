@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     public int CurrentHealth => _currentHealth;
     
     public Action HealthListener;
+    public Action ScoreListener;
 
     private void Awake()
     {
@@ -80,6 +81,12 @@ public class GameManager : MonoBehaviour
         HealthListener.Invoke();
     }
 
+    public void AddScore(int score)
+    {
+        _currentScore += score;
+        ScoreListener.Invoke();
+    }
+    
     private void EndRun()
     {
         //TODO play death/run end animation
