@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,11 +11,11 @@ public class GameManager : MonoBehaviour
     private int _overallScore = 0;
     private int _currentHealth = 0;
 
-    public int CurrentScore => _currentScore;
-    public int CurrentHealth => _currentHealth;
+    
+
     
     // Settings Variables
-    [SerializeField] private int MaxHealth = 100;
+    [SerializeField] private int _maxHealth = 100;
     [SerializeField] private int ScoreMultiplier = 1; // multiply this by the distance and add the score
     
     // Scenes
@@ -22,6 +23,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Scene storeScene;
     [SerializeField] private Scene loadOutScene;
     [SerializeField] private Scene gameScene;
+
+    public int MaxHealth => _maxHealth;
+    public int CurrentScore => _currentScore;
+    public int CurrentHealth => _currentHealth;
+    
+    public Action HealthListener;
 
     private void Awake()
     {
@@ -35,13 +42,13 @@ public class GameManager : MonoBehaviour
         instance = this;
         DontDestroyOnLoad(gameObject);
         
-        _currentHealth = MaxHealth;
+        _currentHealth = _maxHealth;
         _currentScore = 0;
     }
 
     public void BeginRun()
     {
-        _currentHealth = MaxHealth;
+        _currentHealth = _maxHealth;
         _currentScore = 0;
         SceneManager.LoadScene(gameScene.name);
         //todo enable overlay
@@ -70,6 +77,7 @@ public class GameManager : MonoBehaviour
         {
             EndRun();
         }
+        HealthListener.Invoke();
     }
 
     private void EndRun()

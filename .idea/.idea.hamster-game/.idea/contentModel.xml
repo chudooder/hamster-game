@@ -26,6 +26,7 @@
             <e p="Item.cs" t="Include" />
             <e p="Stats.cs" t="Include" />
           </e>
+          <e p="HealthBar.cs" t="Include" />
           <e p="IHammyRun.cs" t="Include" />
           <e p="Mech" t="Include">
             <e p="BidirectionalWheel.cs" t="Include" />

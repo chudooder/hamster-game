@@ -6,7 +6,7 @@ public class Hamster : MonoBehaviour
     [SerializeField] private SpriteRenderer body;
     [SerializeField] private List<SpriteRenderer> belly;
     private HamsterData _hamsterData;
-
+    
     public void Initialize(HamsterData hamsterData)
     {
         _hamsterData = hamsterData;
