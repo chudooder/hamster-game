@@ -1,5 +1,147 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &162497856648812760
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7795527238889321631}
+  - component: {fileID: 3377656279689528102}
+  - component: {fileID: 3625269676145448074}
+  m_Layer: 0
+  m_Name: mate1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7795527238889321631
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162497856648812760}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3577257748741827156}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &3377656279689528102
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162497856648812760}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.6}
+  m_EdgeRadius: 0
+--- !u!114 &3625269676145448074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162497856648812760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 337b5183875dce2469a86575c746c56c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hamsterSpawnLocation: {fileID: 7795527238889321631}
+--- !u!1 &568117401619811062
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5151389641503175730}
+  - component: {fileID: 7261260139636639796}
+  - component: {fileID: 2351787166440100917}
+  m_Layer: 0
+  m_Name: mate2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5151389641503175730
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568117401619811062}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3577257748741827156}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &7261260139636639796
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568117401619811062}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.6}
+  m_EdgeRadius: 0
+--- !u!114 &2351787166440100917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568117401619811062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 337b5183875dce2469a86575c746c56c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hamsterSpawnLocation: {fileID: 5151389641503175730}
 --- !u!1 &3577257748435861604
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,7 +234,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3577257748741827156}
   - component: {fileID: 3577257748741827147}
-  m_Layer: 0
+  - component: {fileID: 268962957639306326}
+  m_Layer: 8
   m_Name: matting room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +252,9 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.45, y: -0.71500015, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 7795527238889321631}
+  - {fileID: 5151389641503175730}
   m_Father: {fileID: 3577257748948599712}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -152,7 +297,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1760659763
   m_SortingLayer: 5
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 42620d0121ec9da4d92853eeef88ac11, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -164,6 +309,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &268962957639306326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3577257748741827146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7bbeb4b61f9ef44b905ce66794a2786, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hamster1Location: {fileID: 3625269676145448074}
+  _hamster2Location: {fileID: 2351787166440100917}
 --- !u!1 &3577257748862139487
 GameObject:
   m_ObjectHideFlags: 0
@@ -586,7 +745,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3577257749453243164}
   - component: {fileID: 3577257749453243155}
-  m_Layer: 0
+  - component: {fileID: 2330480177581433284}
+  - component: {fileID: 1375810725527759438}
+  m_Layer: 8
   m_Name: rest room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -646,7 +807,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1760659763
   m_SortingLayer: 5
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 89ee9dba8fd04d04fbe5fdbcc3d022c7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -658,6 +819,45 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &2330480177581433284
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3577257749453243154}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.1923077, y: 1.1923077}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.1923077, y: 1.1923077}
+  m_EdgeRadius: 0
+--- !u!114 &1375810725527759438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3577257749453243154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 337b5183875dce2469a86575c746c56c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hamsterSpawnLocation: {fileID: 3577257749453243164}
 --- !u!1 &3577257749635396280
 GameObject:
   m_ObjectHideFlags: 0
@@ -924,7 +1124,7 @@ PrefabInstance:
     - target: {fileID: -1833303654738711436, guid: e3cae713d815f8c4f9fb1aca9f98c24d, type: 3}
       propertyPath: Hamster
       value: 
-      objectReference: {fileID: 4896927770527249636}
+      objectReference: {fileID: 0}
     - target: {fileID: 429414535843063158, guid: e3cae713d815f8c4f9fb1aca9f98c24d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.43
@@ -975,17 +1175,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3cae713d815f8c4f9fb1aca9f98c24d, type: 3}
---- !u!114 &4896927770527249636 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8237533577030851278, guid: e3cae713d815f8c4f9fb1aca9f98c24d, type: 3}
-  m_PrefabInstance: {fileID: 3577257749706403370}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d72e4909f6d1c4545bb9aeff381de64f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &3769916162571488092 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 429414535843063158, guid: e3cae713d815f8c4f9fb1aca9f98c24d, type: 3}
@@ -1013,7 +1202,7 @@ PrefabInstance:
     - target: {fileID: 67478792320404968, guid: 64a4243166613cd4fb249ce29bc2c2e1, type: 3}
       propertyPath: Hamster
       value: 
-      objectReference: {fileID: 7283799381239213349}
+      objectReference: {fileID: 0}
     - target: {fileID: 2528128046732515942, guid: 64a4243166613cd4fb249ce29bc2c2e1, type: 3}
       propertyPath: m_Name
       value: ShieldHamsterWheel
@@ -1069,17 +1258,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2528128046732515943, guid: 64a4243166613cd4fb249ce29bc2c2e1, type: 3}
   m_PrefabInstance: {fileID: 3577257749884356858}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7283799381239213349 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6102861324329936351, guid: 64a4243166613cd4fb249ce29bc2c2e1, type: 3}
-  m_PrefabInstance: {fileID: 3577257749884356858}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d72e4909f6d1c4545bb9aeff381de64f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &5694823977205879055
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1199,11 +1377,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60c4c698fc6cc964f9ee24ce2ac32b65, type: 3}
---- !u!4 &3577257748206907227 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5119609870272111767, guid: 60c4c698fc6cc964f9ee24ce2ac32b65, type: 3}
-  m_PrefabInstance: {fileID: 8550219086821706700}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &3577257748206907236 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5119609870272111784, guid: 60c4c698fc6cc964f9ee24ce2ac32b65, type: 3}
@@ -1215,3 +1388,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21e38ab4a00d704468ed89b1daf72184, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &3577257748206907227 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5119609870272111767, guid: 60c4c698fc6cc964f9ee24ce2ac32b65, type: 3}
+  m_PrefabInstance: {fileID: 8550219086821706700}
+  m_PrefabAsset: {fileID: 0}
