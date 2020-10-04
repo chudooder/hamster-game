@@ -5,13 +5,17 @@ using UnityEngine.EventSystems;
 
 public class BidirectionalWheel : MonoBehaviour, IPointerClickHandler {
     public Transform pivot;
-    public float ACCEL_SCALE = 60f;
-    public float DECEL_SCALE = 30f;
-    public float MAX_SPEED_SCALE = 50f;
+    // public float ACCEL_SCALE = 60f;
+    // public float DECEL_SCALE = 30f;
+    // public float MAX_SPEED_SCALE = 50f;
+    
+    public float ACCEL = 60f;
+    public float DECEL = 30f;
+    public float MAX_SPEED = 50f;
 
-    public float ACCEL => Hamster.GetStat(Stats.StatType.Acceleration) * ACCEL_SCALE;
-    public float DECEL => Hamster.GetStat(Stats.StatType.Motivation) * DECEL_SCALE;
-    public float MAX_SPEED => Hamster.GetStat(Stats.StatType.Speed) * MAX_SPEED_SCALE;
+    // public float ACCEL => Hamster.GetStat(Stats.StatType.Acceleration) * ACCEL_SCALE;
+    // public float DECEL => Hamster.GetStat(Stats.StatType.Motivation) * DECEL_SCALE;
+    // public float MAX_SPEED => Hamster.GetStat(Stats.StatType.Speed) * MAX_SPEED_SCALE;
 
     public Hamster Hamster;
     
