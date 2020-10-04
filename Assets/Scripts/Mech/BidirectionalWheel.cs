@@ -14,7 +14,7 @@ public class BidirectionalWheel : MonoBehaviour, IPointerClickHandler {
     public float MAX_SPEED = 50f;
 
     // public float ACCEL => Hamster.GetStat(Stats.StatType.Acceleration) * ACCEL_SCALE;
-    // public float DECEL => Hamster.GetStat(Stats.StatType.Motivation) * DECEL_SCALE;
+    // public float DECEL => Hamster.GetStat(Stats.StatType.Motivation);
     // public float MAX_SPEED => Hamster.GetStat(Stats.StatType.Speed) * MAX_SPEED_SCALE;
 
     public Hamster Hamster;

@@ -12,6 +12,8 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float _spawnRadius = 30;
     public Transform Target;
 
+
+    public float _wait;
     private void Start()
     {
         StartCoroutine(SpawnRoutine());
@@ -25,7 +27,8 @@ public class EnemySpawner : MonoBehaviour
             t = 0;
             do
             {
-                wait = _baseSpawnWait  / ((GameManager.instance.CurrentScore + 1) * _spawnRate);
+                wait = _baseSpawnWait  / ((GameManager.instance.CurrentScore + _spawnRate));
+                _wait = wait;
                 t += Time.deltaTime;
                 yield return null;
             } while (t < wait);

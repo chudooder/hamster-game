@@ -73,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1800036903
-  m_SortingLayer: 4
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -1268260898446716459, guid: 98b2116a6ce4f9f44bc04af470ebb611, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -100,7 +100,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RocketLifetime: 10
   RotationSpeed: 3
-  RocketMoveSpeed: 6
+  RocketMoveSpeed: 10
+  RocketDamage: 1
   _thrust: {fileID: 4401326921018857966}
   _explosion: {fileID: 2004609408364184354, guid: 423281083fcc8be4dab349d310bd59b7, type: 3}
 --- !u!61 &5843686202296184956
@@ -251,7 +252,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1800036903
-  m_SortingLayer: 4
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 4961558412901361228, guid: 98b2116a6ce4f9f44bc04af470ebb611, type: 3}
   m_Color: {r: 0.9292453, g: 1, b: 0.98119646, a: 0.7294118}
