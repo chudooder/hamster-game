@@ -38,6 +38,7 @@
           </e>
           <e p="SpinToWin.cs" t="Include" />
           <e p="UI" t="Include">
+            <e p="DamageFlash.cs" t="Include" />
             <e p="HealthBar.cs" t="Include" />
             <e p="ScoreDisplay.cs" t="Include" />
           </e>
