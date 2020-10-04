@@ -5,7 +5,7 @@ using UnityEngine;
 public class MechMovement : MonoBehaviour
 {
     public float MAX_SPEED = 30f;
-    public float speed = 20f; // degrees per second
+    [HideInInspector] public float speed = 20f; // degrees per second
     public float deceleration = 2f; // degrees per second squared
     public float speedPerClick = 2f;
 

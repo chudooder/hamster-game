@@ -13,15 +13,25 @@ public class Enemy : MonoBehaviour
 
     
     [SerializeField] private Transform[] _rocketLoadLocations;
-    [SerializeField] private Transform _target;
+    public Transform Target;
 
     public float IdealDistanceFromTarget = 5f;
         
     private Rocket[] _rockets;
-    
-    
-    
-    
+
+
+    private EnemyEyes _eyes;
+    private EnemyRocketLauncher _rocketLauncher;
+
+    private void Awake()
+    {
+        _eyes = GetComponentInChildren<EnemyEyes>();
+        _rocketLauncher = GetComponentInChildren<EnemyRocketLauncher>();
+
+        _eyes.FollowObject = Target;
+        _rocketLauncher.FollowObject = Target;
+    }
+
     private void Start()
     {
         _rockets = new Rocket[_rocketLoadLocations.Length];
@@ -36,7 +46,7 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        transform.rotation = _target.rotation;
+        transform.rotation = Target.rotation;
     }
 
     private IEnumerator MoveRoutine()
@@ -54,14 +64,14 @@ public class Enemy : MonoBehaviour
     private IEnumerator PathToPoint(float angle)
     {
         Vector2 dir = Quaternion.AngleAxis(angle, Vector3.forward) * (Vector3)Vector2.right ;
-        var point = (Vector2)_target.transform.position + dir.normalized * IdealDistanceFromTarget;
+        var point = (Vector2)Target.transform.position + dir.normalized * IdealDistanceFromTarget;
         
         var move = (point - (Vector2)transform.position).normalized * Speed;
         while (Vector2.Distance(point, transform.position) > move.magnitude * Time.deltaTime)
         {
             transform.Translate(move * Time.deltaTime, Space.World);
             yield return null;
-            point = (Vector2)_target.transform.position + dir.normalized * IdealDistanceFromTarget;
+            point = (Vector2)Target.transform.position + dir.normalized * IdealDistanceFromTarget;
             move = (point - (Vector2)transform.position).normalized * Speed;
         }
         yield return null;
@@ -75,7 +85,7 @@ public class Enemy : MonoBehaviour
         while (t < time)
         {
             Vector2 dir = Quaternion.AngleAxis(angle, Vector3.forward) * (Vector3)Vector2.right ;
-            var point = (Vector2)_target.transform.position + dir.normalized * IdealDistanceFromTarget;
+            var point = (Vector2)Target.transform.position + dir.normalized * IdealDistanceFromTarget;
             var move = (point - (Vector2)transform.position).normalized * Speed;
             if (Vector2.Distance(transform.position, point) < move.magnitude)
                 transform.position = point;
@@ -93,7 +103,7 @@ public class Enemy : MonoBehaviour
     {
         Random r = new Random();
         float angle = r.Next(180) - 90;
-        float currAngle = Vector2.SignedAngle(Vector2.right, (transform.position - _target.transform.position).normalized);
+        float currAngle = Vector2.SignedAngle(Vector2.right, (transform.position - Target.transform.position).normalized);
         angle += currAngle;
 
         return angle;
@@ -108,7 +118,7 @@ public class Enemy : MonoBehaviour
         {
             for (int i = 0; i < _rockets.Length; i++) 
             {
-                _rockets[i].Fire(_target);
+                _rockets[i].Fire(Target);
                 yield return new WaitForSeconds(.25f);
                 
                 _rockets[i] = Instantiate(RocketPrefab, _rocketLoadLocations[i]);
