@@ -14,10 +14,10 @@ TagManager:
   - 
   - 
   - Clickable
-  - Projectiles
-  - ProjectileTargets
-  - 
-  - 
+  - EnemyProjectiles
+  - EnemyProjectileTargets
+  - PlayerProjectiles
+  - PlayerProjectileTargets
   - 
   - 
   - 
