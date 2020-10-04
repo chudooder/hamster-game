@@ -307,14 +307,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RocketPrefab: {fileID: 6465324410033662591, guid: 812bb356a50fbe84daf58a1db3059dc6, type: 3}
-  Speed: 5
+  Speed: 12
   Health: 4
+  FireRate: 5
   _rocketLoadLocations:
   - {fileID: 1625736636903835759}
   - {fileID: 1625736637444918613}
-  _noFireRadius: 5
+  _noFireRadius: 7
   _target: {fileID: 0}
-  IdealDistanceFromTarget: 10
+  IdealDistanceFromTarget: 16
 --- !u!61 &1916900560568691697
 BoxCollider2D:
   m_ObjectHideFlags: 0

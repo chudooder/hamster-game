@@ -25,6 +25,10 @@ public class Gun : MonoBehaviour
     private float _t = 0;
     private AudioClip _audioClip;
 
+    private float _flashStartX;
+    private float _flashStartY;
+
+
     void Awake()
     {
         _barrelStartX = _barrel.transform.localPosition.x;
@@ -33,6 +37,9 @@ public class Gun : MonoBehaviour
         
         _muzzleFlash.SetActive(false);
         _audioClip = _audioSource.clip;
+
+        _flashStartX = _muzzleFlash.transform.localPosition.x;
+        _flashStartY = _muzzleFlash.transform.localPosition.y;
     }
 
     // Update is called once per frame
@@ -77,6 +84,8 @@ public class Gun : MonoBehaviour
 
     IEnumerator FlashRoutine()
     {
+        _muzzleFlash.transform.localPosition = new Vector2(_flashStartX - (_barrelStartX - _barrel.localPosition.x), _flashStartY);
+        
         _muzzleFlash.SetActive(true);
         yield return new WaitForSeconds(.05f);
         _muzzleFlash.SetActive(false);
