@@ -36,7 +36,7 @@ public class HamsterData
         statModifiers = new Dictionary<Stats.StatType, int>();
         foreach (Stats.StatType statType in Stats.AllStatTypes)
         {
-            statModifiers.Add(statType, 0);
+            statModifiers.Add(statType, 1);
         }
         this.statValues = statValues;
         this.status = status;
