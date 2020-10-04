@@ -32,7 +32,16 @@ public class Bullet : MonoBehaviour
         var enemy = other.GetComponent<Enemy>();
         if (enemy)
             enemy.Damage(2);
-        else 
+        
+        if (_deathEffect) Instantiate(_deathEffect, transform.position, Quaternion.identity);
+        Destroy(gameObject);
+    }
+    
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        var rocket = other.transform.GetComponent<Rocket>();
+        if (rocket && rocket.Fired)
+            rocket.OnHit();
         
         if (_deathEffect) Instantiate(_deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);

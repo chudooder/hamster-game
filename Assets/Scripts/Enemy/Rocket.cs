@@ -15,6 +15,8 @@ public class Rocket : MonoBehaviour
     private Transform _target;
 
     private bool _fired = false;
+    public bool Fired => _fired;
+    
     private void Start()
     {
         _thrust.SetActive(false);
