@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
 
     
     [SerializeField] private Transform[] _rocketLoadLocations;
+    [SerializeField] private float _noFireRadius = 5;
     public Transform Target;
 
     public float IdealDistanceFromTarget = 5f;
@@ -114,11 +115,19 @@ public class Enemy : MonoBehaviour
     
     IEnumerator LoadAndFire()
     {
+        var overlapDelay = new WaitForSeconds(1);
+        
         while (true)
         {
-            for (int i = 0; i < _rockets.Length; i++) 
+            for (int i = 0; i < _rockets.Length; i++)
             {
+                while (Vector2.Distance(Target.position, transform.position) < _noFireRadius)
+                {
+                    yield return overlapDelay;
+                }
+                
                 _rockets[i].Fire(Target);
+                _rockets[i] = null;
                 yield return new WaitForSeconds(.25f);
                 
                 _rockets[i] = Instantiate(RocketPrefab, _rocketLoadLocations[i]);

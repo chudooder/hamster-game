@@ -10,9 +10,10 @@ public class Rocket : MonoBehaviour
     public float RocketMoveSpeed = 3;
 
     [SerializeField] private GameObject _thrust;
-    
+    [SerializeField] private GameObject _explosion;
     private Transform _target;
 
+    private bool _fired = false;
     private void Start()
     {
         _thrust.SetActive(false);
@@ -40,26 +41,34 @@ public class Rocket : MonoBehaviour
 
     public virtual void OnHit()
     {
-        // TODO: deal damage
+        Instantiate(_explosion, transform.position, Quaternion.identity);
         Destroy(gameObject);
+
     }
 
     public virtual void OnTimeout()
     {
+        Instantiate(_explosion, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
     
     public virtual void Fire(Transform target)
     {
+        _fired = true;
         transform.parent = null;
         StartCoroutine(FireRoutine(target));
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.transform == _target)
+        if (_fired)
         {
+            if (other.transform == _target)
+            {
+                // TODO: trigger target damage method or somethin
+            }
             OnHit();
+
         }
     }
 }

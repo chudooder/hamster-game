@@ -102,6 +102,7 @@ MonoBehaviour:
   RotationSpeed: 3
   RocketMoveSpeed: 6
   _thrust: {fileID: 4401326921018857966}
+  _explosion: {fileID: 2004609408364184354, guid: 423281083fcc8be4dab349d310bd59b7, type: 3}
 --- !u!61 &5843686202296184956
 BoxCollider2D:
   m_ObjectHideFlags: 0
