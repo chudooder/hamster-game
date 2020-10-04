@@ -13,7 +13,6 @@ public class HamsterManager : MonoBehaviour
     private List<HamsterData> hamsters;
     private List<HamsterData> chosenHamsters;
     private List<GameObject> currentHamsters;
-    private HammyRunPhysics[] wheelPositions;
     [SerializeField] private HamsterDefaultValues hamsterDefaultValues;
     [SerializeField] private GameObject hamsterPrefab;
     [SerializeField] private int ScoreNeededToMature;
@@ -47,13 +46,12 @@ public class HamsterManager : MonoBehaviour
     {
         currentHamsters = new List<GameObject>();
         chosenHamsters = hamsters; //todo loadouts
-        wheelPositions = FindObjectsOfType<HammyRunPhysics>();
-        Debug.Log(wheelPositions.Length);
         int i = 0;
         foreach (HamsterData hamsterData in chosenHamsters)
         {
-            GameObject hamObj = Instantiate(hamsterPrefab, wheelPositions[i].transform, false);
+            var hamObj = Instantiate(hamsterPrefab, null, false).GetComponent<Hamster>();
             hamObj.GetComponent<Hamster>().Initialize(hamsterData);
+            RunManager.Instance.HamsterLocations[i].Hamster = hamObj;
             //todo put in hamster in right pos with right parent
             i++;
         }

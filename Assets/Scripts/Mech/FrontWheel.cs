@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class FrontWheel : MonoBehaviour, IPointerClickHandler
+public class FrontWheel : HamsterWheel, IPointerClickHandler
 {
     private HammyRun hammyRun;
     private SpinToWin spin;

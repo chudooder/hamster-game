@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class BidirectionalWheel : MonoBehaviour, IPointerClickHandler {
+public class BidirectionalWheel : HamsterWheel, IPointerClickHandler {
     public Transform pivot;
     // public float ACCEL_SCALE = 60f;
     // public float DECEL_SCALE = 30f;
@@ -17,7 +17,6 @@ public class BidirectionalWheel : MonoBehaviour, IPointerClickHandler {
     // public float DECEL => Hamster.GetStat(Stats.StatType.Motivation);
     // public float MAX_SPEED => Hamster.GetStat(Stats.StatType.Speed) * MAX_SPEED_SCALE;
 
-    public Hamster Hamster;
     
     private float speed;
     private HammyRun hammyRun;

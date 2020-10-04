@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Object = UnityEngine.Object;
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Object loadOutScene;
     [SerializeField] private Object gameScene;
 
+    
     public int MaxHealth => _maxHealth;
     public int CurrentScore => _currentScore;
     public int CurrentHealth => _currentHealth;

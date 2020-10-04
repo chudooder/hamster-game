@@ -33,15 +33,18 @@
             <e p="ClickHandler.cs" t="Include" />
             <e p="FrontWheel.cs" t="Include" />
             <e p="Gun.cs" t="Include" />
+            <e p="HamsterLocation.cs" t="Include" />
             <e p="MechAudio.cs" t="Include" />
             <e p="MechMovement.cs" t="Include" />
             <e p="ShootWheel.cs" t="Include" />
           </e>
+          <e p="RunManager.cs" t="Include" />
           <e p="SpinToWin.cs" t="Include" />
           <e p="UI" t="Include">
             <e p="DamageFlash.cs" t="Include" />
             <e p="HealthBar.cs" t="Include" />
             <e p="ScoreDisplay.cs" t="Include" />
+            <e p="StartScene.cs" t="Include" />
           </e>
         </e>
       </e>

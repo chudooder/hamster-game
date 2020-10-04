@@ -247,10 +247,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 91e0135bcd14db94289d566d1513692e, type: 3}
     m_FontSize: 80
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 8
     m_MaxSize: 80
     m_Alignment: 4
@@ -326,10 +326,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 91e0135bcd14db94289d566d1513692e, type: 3}
     m_FontSize: 80
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 8
     m_MaxSize: 80
     m_Alignment: 4
@@ -696,6 +696,6 @@ MonoBehaviour:
   _maxHealth: 100
   ScoreMultiplier: 1
   mainMenuScene: {fileID: 102900000, guid: 01ee7e9f00afd413fa3e191f5af0a810, type: 3}
-  storeScene: {fileID: 0}
-  loadOutScene: {fileID: 0}
-  gameScene: {fileID: 102900000, guid: b448628671a8c4acba8681817428258e, type: 3}
+  storeScene: {fileID: 102900000, guid: b448628671a8c4acba8681817428258e, type: 3}
+  loadOutScene: {fileID: 102900000, guid: 4f3a2c28d9ff1ee4eb42f225feffd218, type: 3}
+  gameScene: {fileID: 102900000, guid: 74c842dba2212394dadfa3a503977426, type: 3}

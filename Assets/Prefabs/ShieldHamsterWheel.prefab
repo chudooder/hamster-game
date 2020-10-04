@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fd8361ac2ca22446a64f2e355dd68db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HammyRunPhysics: {fileID: 6950836567969893903}
+  _hamsterSpawnLocation: {fileID: 6568354054658515504}
   pivot: {fileID: 0}
   ACCEL: 60
   DECEL: 30
+  MAX_SPEED: 50
 --- !u!1001 &2383185865313683523
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -75,5 +78,21 @@ PrefabInstance:
 --- !u!1 &2528128046732515942 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 146210834353263141, guid: 56f765b0a4c3f8f41b8cd44c98b621fd, type: 3}
+  m_PrefabInstance: {fileID: 2383185865313683523}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6950836567969893903 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4712053713209198156, guid: 56f765b0a4c3f8f41b8cd44c98b621fd, type: 3}
+  m_PrefabInstance: {fileID: 2383185865313683523}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77c3ff313e7040141bab8009bb84338b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &6568354054658515504 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8806153402157099635, guid: 56f765b0a4c3f8f41b8cd44c98b621fd, type: 3}
   m_PrefabInstance: {fileID: 2383185865313683523}
   m_PrefabAsset: {fileID: 0}

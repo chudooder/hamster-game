@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainScene-jake.unity
     guid: b448628671a8c4acba8681817428258e
+  - enabled: 1
+    path: Assets/Scenes/MainScene-ian.unity
+    guid: 74c842dba2212394dadfa3a503977426
   m_configObjects: {}

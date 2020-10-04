@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ShootWheel : MonoBehaviour, IPointerClickHandler {
+public class ShootWheel : HamsterWheel, IPointerClickHandler {
     public float ACCEL = 60f;
     public float DECEL = 30f;
     public float MAX_SPEED = 180f;

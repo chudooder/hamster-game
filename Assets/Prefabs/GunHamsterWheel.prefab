@@ -12,7 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fd8361ac2ca22446a64f2e355dd68db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunPivot: {fileID: 0}
+  HammyRunPhysics: {fileID: 5086380538265415966}
+  _hamsterSpawnLocation: {fileID: 9063311837730954529}
+  pivot: {fileID: 0}
+  ACCEL: 60
+  DECEL: 30
+  MAX_SPEED: 50
 --- !u!1001 &572774933468297042
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -82,7 +87,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 146210834790875249, guid: 56f765b0a4c3f8f41b8cd44c98b621fd, type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 146210835476193190, guid: 56f765b0a4c3f8f41b8cd44c98b621fd, type: 3}
       propertyPath: m_SortingLayerID
@@ -105,5 +110,21 @@ PrefabInstance:
 --- !u!1 &429414535843063159 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 146210834353263141, guid: 56f765b0a4c3f8f41b8cd44c98b621fd, type: 3}
+  m_PrefabInstance: {fileID: 572774933468297042}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5086380538265415966 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4712053713209198156, guid: 56f765b0a4c3f8f41b8cd44c98b621fd, type: 3}
+  m_PrefabInstance: {fileID: 572774933468297042}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77c3ff313e7040141bab8009bb84338b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &9063311837730954529 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8806153402157099635, guid: 56f765b0a4c3f8f41b8cd44c98b621fd, type: 3}
   m_PrefabInstance: {fileID: 572774933468297042}
   m_PrefabAsset: {fileID: 0}
