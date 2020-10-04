@@ -44,15 +44,15 @@ TagManager:
   - name: MechBack
     uniqueID: 313326759
     locked: 0
-  - name: Mech
-    uniqueID: 468472425
-    locked: 0
-  - name: MechFront
-    uniqueID: 1760659763
-    locked: 0
   - name: Projectiles
     uniqueID: 1800036903
     locked: 0
   - name: OverProjectiles
     uniqueID: 3463633019
+    locked: 0
+  - name: Mech
+    uniqueID: 468472425
+    locked: 0
+  - name: MechFront
+    uniqueID: 1760659763
     locked: 0

@@ -34,6 +34,9 @@ public class GameManager : MonoBehaviour
  
         instance = this;
         DontDestroyOnLoad(gameObject);
+        
+        _currentHealth = MaxHealth;
+        _currentScore = 0;
     }
 
     public void BeginRun()

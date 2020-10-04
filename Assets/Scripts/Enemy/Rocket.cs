@@ -8,6 +8,7 @@ public class Rocket : MonoBehaviour
     public float RocketLifetime = 10;
     public float RotationSpeed = 3;
     public float RocketMoveSpeed = 3;
+    public int RocketDamage = 3;
 
     [SerializeField] private GameObject _thrust;
     [SerializeField] private GameObject _explosion;
@@ -65,7 +66,7 @@ public class Rocket : MonoBehaviour
         {
             if (other.transform == _target)
             {
-                // TODO: trigger target damage method or somethin
+                GameManager.instance.Damage(RocketDamage);
             }
             OnHit();
 

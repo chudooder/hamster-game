@@ -8,9 +8,15 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private Enemy _enemy;
     [SerializeField] private float _spawnRate = 5;
+    [SerializeField] private float _baseSpawnWait = 5;
     [SerializeField] private float _spawnRadius = 30;
     public Transform Target;
-    
+
+    private void Start()
+    {
+        StartCoroutine(SpawnRoutine());
+    }
+
     IEnumerator SpawnRoutine()
     {
         while (true)
@@ -19,12 +25,13 @@ public class EnemySpawner : MonoBehaviour
             t = 0;
             do
             {
-                wait = GameManager.instance.CurrentScore / _spawnRate;
+                wait = _baseSpawnWait  / ((GameManager.instance.CurrentScore + 1) * _spawnRate);
                 t += Time.deltaTime;
                 yield return null;
             } while (t < wait);
 
             Instantiate(_enemy, CalculateEnemySpawnLocation(), Quaternion.identity).Target = Target;
+            yield return null;
         }
     }
 

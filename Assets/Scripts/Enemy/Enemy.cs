@@ -14,15 +14,27 @@ public class Enemy : MonoBehaviour
     
     [SerializeField] private Transform[] _rocketLoadLocations;
     [SerializeField] private float _noFireRadius = 5;
-    public Transform Target;
+    [SerializeField] private Transform _target;
+
+    public Transform Target
+    {
+        set
+        {
+            _target = value;
+            Eyes.FollowObject = _target;
+            RocketLauncher.FollowObject = _target;
+        }
+        get { return _target; }
+    }
 
     public float IdealDistanceFromTarget = 5f;
         
     private Rocket[] _rockets;
 
-
     private EnemyEyes _eyes;
+    public EnemyEyes Eyes => (_eyes != null)? _eyes : _eyes = GetComponentInChildren<EnemyEyes>(); 
     private EnemyRocketLauncher _rocketLauncher;
+    public EnemyRocketLauncher RocketLauncher => (_rocketLauncher != null)? _rocketLauncher : _rocketLauncher = GetComponentInChildren<EnemyRocketLauncher>(); 
 
     private void Awake()
     {
