@@ -12,7 +12,7 @@ public class HamsterManager : MonoBehaviour
    
     private List<HamsterData> hamsters;
     private List<HamsterData> chosenHamsters;
-    private List<Hamster> currentHamsters;
+    public List<Hamster> currentHamsters;
     [SerializeField] private HamsterDefaultValues hamsterDefaultValues;
     [SerializeField] private GameObject hamsterPrefab;
     [SerializeField] public int ScoreNeededToMature;

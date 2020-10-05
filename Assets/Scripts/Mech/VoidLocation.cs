@@ -15,7 +15,9 @@ public class VoidLocation : HamsterLocation
         {
             if (value != null)
             {
-                Destroy(value);
+                HamsterManager.instance.currentHamsters.Remove(value);
+                
+                Destroy(value.gameObject);
             }
             _hamster = null;
         }
