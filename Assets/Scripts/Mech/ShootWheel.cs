@@ -4,8 +4,12 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class ShootWheel : HamsterWheel, IPointerClickHandler {
-    public float ACCEL = 60f;
-    public float DECEL = 30f;
+    public float BASE_ACCEL = 60f;
+    public float BASE_DECEL = 30f;
+
+    public float ACCEL => Hamster == null ? BASE_ACCEL : Hamster.GetStat(Stats.StatType.Acceleration) / 5 * BASE_ACCEL + BASE_ACCEL;
+    public float DECEL => Hamster == null ? BASE_DECEL : (5 - Hamster.GetStat(Stats.StatType.Motivation)) / 5 * BASE_DECEL + BASE_DECEL;
+
     public float MAX_SPEED = 180f;
     public float bulletThreshold = 60f;
     public Gun gun;
