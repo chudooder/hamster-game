@@ -21,9 +21,10 @@ public class Hamster : MonoBehaviour
         {
             sprite.color = _hamsterData.bellyColor;
         }
-
+    
         if (_hamsterData.status == HamsterStatus.Unborn)
         {
+            Debug.Log("still unborn");
             InitializeBaby();
         }
     }
@@ -60,6 +61,7 @@ public class Hamster : MonoBehaviour
 
     private void InitializeBaby()
     {
+        Debug.Log("initializing bb");
         babyTimer.gameObject.SetActive(true);
         adultBody.gameObject.SetActive(false);
         babyTimer.StartTimer(HamsterManager.instance.ScoreNeededToBeBorn);

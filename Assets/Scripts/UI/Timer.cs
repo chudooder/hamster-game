@@ -11,24 +11,20 @@ public class Timer : MonoBehaviour
     [SerializeField] private Hamster hamster;
     
     private bool _started = false;
-    private float _amount;
-
-    private float _currentAmount = 0;
-
-    public void StartTimer(float amount)
+    private float _target;
+    
+    public void StartTimer(float target)
     {
         _started = true;
-        _currentAmount = amount;
-        _amount = amount;
+        _target = target + GameManager.instance.CurrentScore;
         GameManager.instance.ScoreListener += UpdateTimer;
     }
 
     private void UpdateTimer()
     {
         if (!_started) return;
-        _currentAmount -= GameManager.instance.CurrentScore;
-        timerImage.fillAmount = _currentAmount / _amount;
-        if (_currentAmount <= 0)
+        timerImage.fillAmount = GameManager.instance.CurrentScore/ _target;
+        if (GameManager.instance.CurrentScore >= _target)
         {
             EndTimer();
         }

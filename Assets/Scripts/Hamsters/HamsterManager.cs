@@ -79,6 +79,7 @@ public class HamsterManager : MonoBehaviour
     {
         HamsterData child = hamster.Breed(hamster1);
         chosenHamsters.Add(child);
+        Debug.Log("Child bred. Status is:  " + child.status);
         Hamster childObj = Instantiate(hamsterPrefab, null, false).GetComponent<Hamster>();
         childObj.Initialize(child);
         currentHamsters.Add(childObj);

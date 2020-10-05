@@ -54,6 +54,7 @@ MonoBehaviour:
   babyTimer: {fileID: 4359805535406796729}
   adultTimer: {fileID: 5404299910168217971}
   adultBody: {fileID: 4660044127290967446}
+  babyScale: 0.5
 --- !u!1 &1816404584794189496
 GameObject:
   m_ObjectHideFlags: 0
