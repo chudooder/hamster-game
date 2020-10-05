@@ -48,5 +48,6 @@ public class ShootWheel : HamsterWheel, IPointerClickHandler {
 
     public void OnPointerClick(PointerEventData eventData) {
         speed = Mathf.Min(speed + ACCEL, MAX_SPEED);
+        HamsterCard.CurrentHamster = Hamster;
     }
 }

@@ -52,5 +52,7 @@ public class BidirectionalWheel : HamsterWheel, IPointerClickHandler {
         } else {
             speed -= ACCEL;
         }
+
+        HamsterCard.CurrentHamster = Hamster;
     }
 }

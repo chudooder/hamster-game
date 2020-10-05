@@ -29,5 +29,6 @@ public class FrontWheel : HamsterWheel, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData) {
         this.mechMovement.IncreaseSpeed(ACCEL);
+        HamsterCard.CurrentHamster = Hamster;
     }
 }
