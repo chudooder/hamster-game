@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
     {
         _currentHealth = _maxHealth;
         _currentScore = 0;
-        SceneManager.LoadScene(gameScene.name);
+        SceneManager.LoadScene("MainScene-ian");
         //todo enable overlay
         //todo spawn hamsters chosen by user in relevant places
     }
@@ -93,7 +93,7 @@ public class GameManager : MonoBehaviour
         //TODO play death/run end animation
         //TODO change scene
         _overallScore += _currentScore;
-        SceneManager.LoadScene(storeScene.name);
+        SceneManager.LoadScene("EndScene");
     }
 
 }
