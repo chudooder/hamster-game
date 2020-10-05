@@ -52,7 +52,6 @@ public class HamsterManager : MonoBehaviour
             var hamObj = Instantiate(hamsterPrefab, null, false).GetComponent<Hamster>();
             hamObj.GetComponent<Hamster>().Initialize(hamsterData);
             RunManager.Instance.HamsterLocations[i].Hamster = hamObj;
-            //todo put in hamster in right pos with right parent
             i++;
         }
     }
@@ -66,6 +65,21 @@ public class HamsterManager : MonoBehaviour
         HamsterData hamster = new HamsterData(bodyColor, bellyColor, firstName,lastName, HamsterStatus.Adult);
         return hamster;
     }
-    
-    
+
+    public string GenerateRandomFirstName()
+    {
+        string firstName = hamsterDefaultValues.firstNames[Random.Range(0, hamsterDefaultValues.firstNames.Count)];
+        return firstName;
+    }
+
+    public bool CanBreed => MaxHamstersInGame > currentHamsters.Count;
+
+    public void Breed(Hamster hamster, Hamster hamster1)
+    {
+        HamsterData child = hamster.Breed(hamster1);
+        chosenHamsters.Add(child);
+        //todo spawn in hamster
+        //todo make these permanent
+    }
+
 }

@@ -22,4 +22,9 @@ public class Hamster : MonoBehaviour
     {
         return _hamsterData.statModifiers[statType] + _hamsterData.statValues[statType];
     }
+
+    public HamsterData Breed(Hamster hamster)
+    {
+        return HamsterData.Breed(hamster._hamsterData, _hamsterData, HamsterManager.instance.GenerateRandomFirstName());
+    }
 }
