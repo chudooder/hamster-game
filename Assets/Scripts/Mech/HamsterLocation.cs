@@ -31,16 +31,15 @@ public class HamsterLocation : MonoBehaviour, IBeginDragHandler, IEndDragHandler
 
     public virtual void OnBeginDrag(PointerEventData eventData)
     {
-        if (!Hamster) return;
+        if (!Hamster || Hamster.HamsterData.status != HamsterStatus.Adult) return;
         HamsterCard.CurrentHamster = Hamster;
 
-        Debug.Log("DRAGGING HAMMY");
         Hamster.transform.parent = Camera.main.transform;
     }
 
     public virtual void OnEndDrag(PointerEventData eventData)
     {
-        if (!Hamster) return;
+        if (!Hamster || Hamster.HamsterData.status != HamsterStatus.Adult) return;
 
         Vector2 dropPos = Camera.main.ScreenToWorldPoint(eventData.position);
         HamsterLocation next = GetClostestHamsterLocation(dropPos);
@@ -58,7 +57,7 @@ public class HamsterLocation : MonoBehaviour, IBeginDragHandler, IEndDragHandler
 
     public virtual void OnDrag(PointerEventData eventData)
     {
-        if (!Hamster) return;
+        if (!Hamster || Hamster.HamsterData.status != HamsterStatus.Adult) return;
         Vector2 dragPos = Camera.main.ScreenToWorldPoint(eventData.position);
         Hamster.transform.position = dragPos;
     }
