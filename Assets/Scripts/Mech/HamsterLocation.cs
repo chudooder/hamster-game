@@ -67,7 +67,7 @@ public class HamsterLocation : MonoBehaviour, IBeginDragHandler, IEndDragHandler
     {
         float bestDist = float.MaxValue;
         HamsterLocation bestLoc = null;
-        foreach (var hamLoc in RunManager.Instance.HamsterLocations)
+        foreach (var hamLoc in RunManager.Instance.PlacableHamsterLocations)
         {
             float dist = Vector2.Distance(pos, hamLoc.transform.position);
             if (dist > SNAP_RADIUS || hamLoc.Hamster != null) continue;

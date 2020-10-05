@@ -27,4 +27,5 @@ public class RunManager : MonoBehaviour
     }
 
     
+    public List<HamsterLocation> PlacableHamsterLocations = new List<HamsterLocation>();
 }

@@ -158,7 +158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.284, y: 0.83511114}
   m_AnchorMax: {x: 0.74889594, y: 0.9603332}
-  m_AnchoredPosition: {x: -11.294006, y: -509}
+  m_AnchoredPosition: {x: 6.1158447, y: -0.047729492}
   m_SizeDelta: {x: 12.231567, y: -0.09552002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &668704307
@@ -402,8 +402,6 @@ MonoBehaviour:
   HamsterPrefab: {fileID: 1825212056103346708, guid: 9ff8ff8ac8fe04907a90c7dc65a5fbdb, type: 3}
   HamsterLimit: 500
   HamsterRate: 3
-  minPoint: {fileID: 0}
-  maxPoint: {fileID: 0}
   hamsterDefaultValues: {fileID: 11400000, guid: aa781ab2e4d9347c38689aa35beee8a0, type: 2}
 --- !u!114 &1017890486
 MonoBehaviour:
@@ -521,7 +519,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.20500001, y: 0.083334394}
   m_AnchorMax: {x: 0.804, y: 0.18611111}
-  m_AnchoredPosition: {x: 0, y: 207}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2056997169
