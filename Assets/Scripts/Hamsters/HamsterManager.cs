@@ -12,11 +12,11 @@ public class HamsterManager : MonoBehaviour
    
     private List<HamsterData> hamsters;
     private List<HamsterData> chosenHamsters;
-    private List<GameObject> currentHamsters;
+    private List<Hamster> currentHamsters;
     [SerializeField] private HamsterDefaultValues hamsterDefaultValues;
     [SerializeField] private GameObject hamsterPrefab;
-    [SerializeField] private int ScoreNeededToMature;
-    [SerializeField] private int ScoreNeededToBeBorn;
+    [SerializeField] public int ScoreNeededToMature;
+    [SerializeField] public int ScoreNeededToBeBorn;
 
     private void Awake()
     {
@@ -44,13 +44,14 @@ public class HamsterManager : MonoBehaviour
     
     public void BeginRun()
     {
-        currentHamsters = new List<GameObject>();
+        currentHamsters = new List<Hamster>();
         chosenHamsters = hamsters; //todo loadouts
         int i = 0;
         foreach (HamsterData hamsterData in chosenHamsters)
         {
-            var hamObj = Instantiate(hamsterPrefab, null, false).GetComponent<Hamster>();
-            hamObj.GetComponent<Hamster>().Initialize(hamsterData);
+            Hamster hamObj = Instantiate(hamsterPrefab, null, false).GetComponent<Hamster>();
+            hamObj.Initialize(hamsterData);
+            currentHamsters.Add(hamObj);
             RunManager.Instance.HamsterLocations[i].Hamster = hamObj;
             i++;
         }
@@ -78,8 +79,18 @@ public class HamsterManager : MonoBehaviour
     {
         HamsterData child = hamster.Breed(hamster1);
         chosenHamsters.Add(child);
-        //todo spawn in hamster
-        //todo make these permanent
+        Hamster childObj = Instantiate(hamsterPrefab, null, false).GetComponent<Hamster>();
+        childObj.Initialize(child);
+        currentHamsters.Add(childObj);
+        foreach (HamsterLocation location in RunManager.Instance.BabyLocations)
+        {
+            if (location.Hamster == null)
+            {
+                location.Hamster = childObj;
+                break;
+            }
+        }
+        //todo make these permanent/between runs
     }
 
 }

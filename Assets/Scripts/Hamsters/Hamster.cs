@@ -5,6 +5,10 @@ public class Hamster : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer body;
     [SerializeField] private List<SpriteRenderer> belly;
+    [SerializeField] private Timer babyTimer;
+    [SerializeField] private Timer adultTimer;
+    [SerializeField] private GameObject adultBody;
+
     private HamsterData _hamsterData;
     public HamsterData HamsterData => _hamsterData;
     
@@ -15,6 +19,11 @@ public class Hamster : MonoBehaviour
         foreach (SpriteRenderer sprite in belly)
         {
             sprite.color = _hamsterData.bellyColor;
+        }
+
+        if (_hamsterData.status == HamsterStatus.Unborn)
+        {
+            InitializeBaby();
         }
     }
 
@@ -27,4 +36,30 @@ public class Hamster : MonoBehaviour
     {
         return HamsterData.Breed(hamster._hamsterData, _hamsterData, HamsterManager.instance.GenerateRandomFirstName());
     }
+
+    public void Mature()
+    {
+        bool changed = _hamsterData.Mature();
+        if (changed)
+        {
+            if (_hamsterData.status == HamsterStatus.Baby)
+            {
+                babyTimer.gameObject.SetActive(false);
+                adultTimer.gameObject.SetActive(true);
+                adultTimer.StartTimer(HamsterManager.instance.ScoreNeededToMature);
+            } else if (_hamsterData.status == HamsterStatus.Adult)
+            {
+                adultBody.SetActive(true);
+                adultTimer.gameObject.SetActive(false);
+            }
+        }
+    }
+
+    private void InitializeBaby()
+    {
+        babyTimer.gameObject.SetActive(true);
+        adultBody.gameObject.SetActive(false);
+        babyTimer.StartTimer(HamsterManager.instance.ScoreNeededToBeBorn);
+    }
+    
 }

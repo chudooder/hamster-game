@@ -10,7 +10,8 @@ public class BreedingRoom : MonoBehaviour
     // Just a template
     void Breed()
     {
-        if (!_hamster1Location.Hamster || !_hamster2Location.Hamster || !HamsterManager.instance.CanBreed) return;
+        //todo check if pair has already bred/assign some sort of cooldown or timer
+        if (!_hamster1Location.Hamster || !_hamster2Location.Hamster || !HamsterManager.instance.CanBreed || !RunManager.Instance.CanHaveBabies) return;
         HamsterManager.instance.Breed(_hamster1Location.Hamster, _hamster2Location.Hamster);
     }
 }

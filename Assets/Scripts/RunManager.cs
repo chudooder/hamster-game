@@ -9,4 +9,22 @@ public class RunManager : MonoBehaviour
     public static RunManager Instance => (_instance) ? _instance : _instance = FindObjectOfType<RunManager>();
     
     public List<HamsterLocation> HamsterLocations = new List<HamsterLocation>();
+    public List<HamsterLocation> BabyLocations = new List<HamsterLocation>();
+
+    public bool CanHaveBabies => CountBabies() > 0;
+
+    private int CountBabies()
+    {
+        int i = 0;
+        foreach (HamsterLocation location in BabyLocations)
+        {
+            if (location.Hamster == null)
+            {
+                i++;
+            }
+        }
+        return i;
+    }
+
+    
 }

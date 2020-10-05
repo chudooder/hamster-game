@@ -57,7 +57,7 @@ public class HamsterData
         int sum = 0;
         for (int i = Stats.StatMinimum; i <= Stats.StatMaximum; ++i)
         {
-            sum += (Random.value < 0.6f) ? 1 : 0;
+            sum += (Random.value < 0.51f) ? 1 : 0;
         }
         return sum;
     }
@@ -65,7 +65,7 @@ public class HamsterData
     private static int RandomSignedStatModifier()
     {
        int mod = (Random.value < 0.6f) ? 0 : 1;
-       mod *= (Random.value < 0.6f) ? 1 : -1;
+       mod *= (Random.value < 0.55f) ? 1 : -1;
        return mod;
     }
 
@@ -117,5 +117,24 @@ public class HamsterData
         }
         
         return new HamsterData(childBodyColor, childBellyColor, childFirstName, lastName, HamsterStatus.Unborn, childStats);
+    }
+    
+    public bool Mature()
+    {
+        bool changed = false;
+        switch (status)
+        {
+            case HamsterStatus.Unborn:
+                changed = true;
+                status = HamsterStatus.Baby;
+                break;
+            case HamsterStatus.Baby:
+                changed = true;
+                status = HamsterStatus.Adult;
+                break;
+            case HamsterStatus.Adult:
+                break;
+        }
+        return changed;
     }
 }
