@@ -36,7 +36,16 @@ public class HealthBar : MonoBehaviour
     {
         _width = _rectTransform.rect.width  /  _rectTransform.localScale.x;
 
-        GameManager.instance.HealthListener +=
-            () => Value = (float) GameManager.instance.CurrentHealth / GameManager.instance.MaxHealth;
+        GameManager.instance.HealthListener += SetHealth;
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.instance.HealthListener -= SetHealth;
+    }
+
+    private void SetHealth()
+    {
+        Value = (float) GameManager.instance.CurrentHealth / GameManager.instance.MaxHealth;
     }
 }

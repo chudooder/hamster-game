@@ -38,6 +38,7 @@
             <e p="MechAudio.cs" t="Include" />
             <e p="MechMovement.cs" t="Include" />
             <e p="ShootWheel.cs" t="Include" />
+            <e p="VoidLocation.cs" t="Include" />
           </e>
           <e p="RunManager.cs" t="Include" />
           <e p="SpinToWin.cs" t="Include" />

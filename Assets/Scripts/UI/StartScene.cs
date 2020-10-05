@@ -9,8 +9,8 @@ public class StartScene : MonoBehaviour
     [SerializeField] private GameObject HamsterPrefab;
     [SerializeField] private int HamsterLimit = 500;
     [SerializeField] private float HamsterRate = 2;
-    [SerializeField] private Transform minPoint;
-    [SerializeField] private Transform maxPoint;
+    private Vector2 minPoint;
+    private Vector2 maxPoint;
     [SerializeField] private HamsterDefaultValues hamsterDefaultValues;
 
     
@@ -23,6 +23,20 @@ public class StartScene : MonoBehaviour
     void Start()
     {
         StartCoroutine(HamsterRain());
+
+        minPoint = Camera.main.ViewportToWorldPoint(Vector2.zero);
+        maxPoint = Camera.main.ViewportToWorldPoint(Vector2.one);
+        Debug.Log(minPoint);
+        var colObj = Instantiate(new GameObject());
+        
+        EdgeCollider2D col = colObj.AddComponent<EdgeCollider2D>();
+        col.points = new[]
+        {
+            new Vector2(minPoint.x, maxPoint.y), 
+            new Vector2(minPoint.x, minPoint.y), 
+            new Vector2(maxPoint.x, minPoint.y), 
+            new Vector2(maxPoint.x, maxPoint.y), 
+        };
     }
 
     // Update is called once per frame
@@ -49,8 +63,8 @@ public class StartScene : MonoBehaviour
     {
         Color bellyColor = hamsterDefaultValues.bellyColors[Random.Range(0, hamsterDefaultValues.bellyColors.Count)];
         Color bodyColor = hamsterDefaultValues.bodyColors[Random.Range(0, hamsterDefaultValues.bodyColors.Count)];
-        float x = Random.Range(minPoint.position.x, maxPoint.position.x);
-        float y = Random.Range(minPoint.position.y, maxPoint.position.y);
+        float x = Random.Range(minPoint.x, maxPoint.x);
+        float y = Random.Range(minPoint.y, maxPoint.y);
         GameObject obj = Instantiate(HamsterPrefab, new Vector3(x, y), Quaternion.identity);
         obj.transform.GetChild(0).GetComponent<SpriteRenderer>().color = bellyColor;
         obj.transform.GetChild(1).GetComponent<SpriteRenderer>().color = bellyColor;

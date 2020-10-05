@@ -9,4 +9,5 @@ public class RunManager : MonoBehaviour
     public static RunManager Instance => (_instance) ? _instance : _instance = FindObjectOfType<RunManager>();
     
     public List<HamsterLocation> HamsterLocations = new List<HamsterLocation>();
+    public List<HamsterLocation> PlacableHamsterLocations = new List<HamsterLocation>();
 }

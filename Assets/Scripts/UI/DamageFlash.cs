@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,6 +14,11 @@ public class DamageFlash : MonoBehaviour
     void Start()
     {
         GameManager.instance.HealthListener += Flash;
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.instance.HealthListener -= Flash;
     }
 
     public void Flash()
