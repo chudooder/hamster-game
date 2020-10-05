@@ -85,7 +85,7 @@ public class GameManager : MonoBehaviour
     {
         _currentHealth -= damage;
         //TODO update overlay
-        if (_currentHealth < 0)
+        if (_currentHealth <= 0)
         {
             EndRun();
         }
