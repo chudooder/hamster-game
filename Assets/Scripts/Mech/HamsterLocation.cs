@@ -33,7 +33,6 @@ public class HamsterLocation : MonoBehaviour, IBeginDragHandler, IEndDragHandler
     {
         if (!Hamster || Hamster.HamsterData.status != HamsterStatus.Adult) return;
         HamsterCard.CurrentHamster = Hamster;
-
         Hamster.transform.parent = Camera.main.transform;
     }
 
