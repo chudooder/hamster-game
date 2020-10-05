@@ -45,8 +45,6 @@ public class GameManager : MonoBehaviour
  
         instance = this;
         DontDestroyOnLoad(gameObject);
-        SceneManager.activeSceneChanged += OnSceneChanged;
-
         _currentHealth = _maxHealth;
         _currentScore = 0;
     }
@@ -58,14 +56,6 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(gameScene.name);
         //todo enable overlay
         //todo spawn hamsters chosen by user in relevant places
-    }
-
-    private void OnSceneChanged(Scene old, Scene next)
-    {
-        if (next.name.Equals(gameScene.name))
-        {
-            HamsterManager.instance.BeginRun();
-        }
     }
 
     public void AddDistance(int distance)

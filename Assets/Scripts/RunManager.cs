@@ -28,4 +28,9 @@ public class RunManager : MonoBehaviour
 
     
     public List<HamsterLocation> PlacableHamsterLocations = new List<HamsterLocation>();
+
+    private void Awake()
+    {
+        HamsterManager.instance.BeginRun();
+    }
 }
