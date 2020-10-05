@@ -49,6 +49,7 @@ public class HamsterManager : MonoBehaviour
         int i = 0;
         foreach (HamsterData hamsterData in chosenHamsters)
         {
+            hamsterData.status = HamsterStatus.Adult;
             Hamster hamObj = Instantiate(hamsterPrefab, null, false).GetComponent<Hamster>();
             hamObj.Initialize(hamsterData);
             currentHamsters.Add(hamObj);
