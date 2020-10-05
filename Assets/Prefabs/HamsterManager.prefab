@@ -45,3 +45,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hamsterDefaultValues: {fileID: 11400000, guid: aa781ab2e4d9347c38689aa35beee8a0, type: 2}
   hamsterPrefab: {fileID: 1816404584345305433, guid: 34efda0d999874791a4f387b580a260f, type: 3}
+  ScoreNeededToMature: 20000
+  ScoreNeededToBeBorn: 20000

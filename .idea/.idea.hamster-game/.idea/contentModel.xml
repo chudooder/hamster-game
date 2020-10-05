@@ -30,6 +30,7 @@
           <e p="Mech" t="Include">
             <e p="BidirectionalWheel.cs" t="Include" />
             <e p="BreedingRoom.cs" t="Include" />
+            <e p="BreedLocation.cs" t="Include" />
             <e p="Bullet.cs" t="Include" />
             <e p="ClickHandler.cs" t="Include" />
             <e p="FrontWheel.cs" t="Include" />

@@ -395,17 +395,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &125390968 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2351787166440100917, guid: 6ce0e4571b6796746ba3c4b2396771d5, type: 3}
-  m_PrefabInstance: {fileID: 748967638}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 337b5183875dce2469a86575c746c56c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &140221288
 GameObject:
   m_ObjectHideFlags: 0
@@ -1000,6 +989,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 268962957639306326, guid: 6ce0e4571b6796746ba3c4b2396771d5, type: 3}
+      propertyPath: _hamster1Location
+      value: 
+      objectReference: {fileID: 1481518841}
+    - target: {fileID: 268962957639306326, guid: 6ce0e4571b6796746ba3c4b2396771d5, type: 3}
+      propertyPath: _hamster2Location
+      value: 
+      objectReference: {fileID: 1597310101}
     - target: {fileID: 568117401619811062, guid: 6ce0e4571b6796746ba3c4b2396771d5, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -1218,6 +1215,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1375810725527759438, guid: 6ce0e4571b6796746ba3c4b2396771d5, type: 3}
+    - {fileID: 3625269676145448074, guid: 6ce0e4571b6796746ba3c4b2396771d5, type: 3}
+    - {fileID: 2351787166440100917, guid: 6ce0e4571b6796746ba3c4b2396771d5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6ce0e4571b6796746ba3c4b2396771d5, type: 3}
 --- !u!114 &748967639 stripped
 MonoBehaviour:
@@ -1273,17 +1272,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3577257749453243164, guid: 6ce0e4571b6796746ba3c4b2396771d5, type: 3}
   m_PrefabInstance: {fileID: 748967638}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &816069637 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3625269676145448074, guid: 6ce0e4571b6796746ba3c4b2396771d5, type: 3}
-  m_PrefabInstance: {fileID: 748967638}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 337b5183875dce2469a86575c746c56c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &819573649
 GameObject:
   m_ObjectHideFlags: 0
@@ -1778,6 +1766,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1391121238}
   m_CullTransparentMesh: 0
+--- !u!1 &1481518840 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 162497856648812760, guid: 6ce0e4571b6796746ba3c4b2396771d5, type: 3}
+  m_PrefabInstance: {fileID: 748967638}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1481518841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481518840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d18ce5a0f22b1c047bc9023d8d24e1d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hamsterSpawnLocation: {fileID: 1481518843}
+  _room: {fileID: 1623692656}
+--- !u!4 &1481518843 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7795527238889321631, guid: 6ce0e4571b6796746ba3c4b2396771d5, type: 3}
+  m_PrefabInstance: {fileID: 748967638}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1499589336
 GameObject:
   m_ObjectHideFlags: 0
@@ -2172,6 +2184,41 @@ Transform:
   m_Father: {fileID: 515496045}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1597310099 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 568117401619811062, guid: 6ce0e4571b6796746ba3c4b2396771d5, type: 3}
+  m_PrefabInstance: {fileID: 748967638}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1597310100 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5151389641503175730, guid: 6ce0e4571b6796746ba3c4b2396771d5, type: 3}
+  m_PrefabInstance: {fileID: 748967638}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1597310101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597310099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d18ce5a0f22b1c047bc9023d8d24e1d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hamsterSpawnLocation: {fileID: 1597310100}
+  _room: {fileID: 1623692656}
+--- !u!114 &1623692656 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 268962957639306326, guid: 6ce0e4571b6796746ba3c4b2396771d5, type: 3}
+  m_PrefabInstance: {fileID: 748967638}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7bbeb4b61f9ef44b905ce66794a2786, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1664552790
 GameObject:
   m_ObjectHideFlags: 0
@@ -2369,8 +2416,8 @@ MonoBehaviour:
   - {fileID: 748967641}
   - {fileID: 748967640}
   - {fileID: 748967639}
-  - {fileID: 816069637}
-  - {fileID: 125390968}
+  - {fileID: 1481518841}
+  - {fileID: 1597310101}
   BabyLocations:
   - {fileID: 1937233976}
   - {fileID: 537454335}
@@ -2379,8 +2426,8 @@ MonoBehaviour:
   - {fileID: 748967641}
   - {fileID: 748967640}
   - {fileID: 748967639}
-  - {fileID: 816069637}
-  - {fileID: 125390968}
+  - {fileID: 1481518841}
+  - {fileID: 1597310101}
   - {fileID: 1336821755}
 --- !u!4 &1722215585
 Transform:
