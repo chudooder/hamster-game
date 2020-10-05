@@ -8,6 +8,7 @@ public class Hamster : MonoBehaviour
     [SerializeField] private Timer babyTimer;
     [SerializeField] private Timer adultTimer;
     [SerializeField] private GameObject adultBody;
+    [SerializeField] private float babyScale = 0.5f;
 
     private HamsterData _hamsterData;
     public HamsterData HamsterData => _hamsterData;
@@ -47,10 +48,12 @@ public class Hamster : MonoBehaviour
                 babyTimer.gameObject.SetActive(false);
                 adultTimer.gameObject.SetActive(true);
                 adultTimer.StartTimer(HamsterManager.instance.ScoreNeededToMature);
+                adultBody.SetActive(true);
+                adultBody.transform.localScale = Vector3.one * babyScale;
             } else if (_hamsterData.status == HamsterStatus.Adult)
             {
-                adultBody.SetActive(true);
                 adultTimer.gameObject.SetActive(false);
+                adultBody.transform.localScale = Vector3.one;
             }
         }
     }
