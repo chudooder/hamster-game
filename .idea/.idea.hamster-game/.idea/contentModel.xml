@@ -29,6 +29,7 @@
           <e p="IHammyRun.cs" t="Include" />
           <e p="Mech" t="Include">
             <e p="BidirectionalWheel.cs" t="Include" />
+            <e p="BreedingRoom.cs" t="Include" />
             <e p="Bullet.cs" t="Include" />
             <e p="ClickHandler.cs" t="Include" />
             <e p="FrontWheel.cs" t="Include" />
@@ -44,6 +45,7 @@
             <e p="DamageFlash.cs" t="Include" />
             <e p="HealthBar.cs" t="Include" />
             <e p="ScoreDisplay.cs" t="Include" />
+            <e p="SkyColorRamp.cs" t="Include" />
             <e p="StartScene.cs" t="Include" />
           </e>
         </e>

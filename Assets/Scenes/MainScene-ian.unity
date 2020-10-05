@@ -389,6 +389,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 515496045}
     m_Modifications:
+    - target: {fileID: 162497856648812760, guid: 6ce0e4571b6796746ba3c4b2396771d5, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 568117401619811062, guid: 6ce0e4571b6796746ba3c4b2396771d5, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1346945623336738591, guid: 6ce0e4571b6796746ba3c4b2396771d5, type: 3}
       propertyPath: m_Color.r
       value: 0.35404056
@@ -1284,6 +1292,7 @@ GameObject:
   - component: {fileID: 1722215585}
   - component: {fileID: 1722215586}
   - component: {fileID: 1722215584}
+  - component: {fileID: 1722215587}
   m_Layer: 0
   m_Name: RunManager
   m_TagString: Untagged
@@ -1338,11 +1347,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemy: {fileID: 1625736638082425311, guid: 27766153d32bd664dbf59694bad5718d, type: 3}
-  _spawnRate: 5000000
-  _baseSpawnWait: 50000000
+  _spawnRate: 500000
+  _baseSpawnWait: 5000000
   _spawnRadius: 30
   Target: {fileID: 460324845}
   _wait: 0
+--- !u!114 &1722215587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1722215583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a7c566d8972b014da3222324fa9c88f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxScore: 1000000
+  colors:
+  - {r: 0.5330782, g: 0, b: 1, a: 0}
+  - {r: 0, g: 0.065570354, b: 1, a: 0}
+  - {r: 0, g: 0.84622717, b: 1, a: 0}
+  - {r: 0, g: 1, b: 0.19833946, a: 0}
+  - {r: 1, g: 0.8975984, b: 0, a: 0}
+  - {r: 1, g: 0, b: 0.01845169, a: 0}
+  - {r: 1, g: 0, b: 0.51225805, a: 0}
 --- !u!1 &1836402546
 GameObject:
   m_ObjectHideFlags: 0
@@ -1454,7 +1484,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
-  m_DragThreshold: 10
+  m_DragThreshold: 20
 --- !u!4 &1942579847
 Transform:
   m_ObjectHideFlags: 0

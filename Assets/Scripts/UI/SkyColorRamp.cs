@@ -5,12 +5,14 @@ using UnityEngine;
 public class SkyColorRamp : MonoBehaviour
 {
     [SerializeField] private float maxScore;
-    [SerializeField] private Color startColor;
-    [SerializeField] private Color endColor;
+    [SerializeField] private Color[] colors;
 
     private void Update() {
         int score = GameManager.instance.CurrentScore;
-        Color color = Color.Lerp(startColor, endColor, score / maxScore);
+        float gt = score / maxScore;
+        int c1i = Mathf.FloorToInt(gt * colors.Length) % colors.Length;
+        int c2i = (c1i + 1) % colors.Length;
+        Color color = Color.Lerp(colors[c1i], colors[c2i], (score / maxScore * colors.Length)  % 1);
         Camera.main.backgroundColor = color;
     }
 }

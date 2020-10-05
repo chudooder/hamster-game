@@ -34,6 +34,7 @@ public class HamsterLocation : MonoBehaviour, IBeginDragHandler, IEndDragHandler
         if (!Hamster) return;
         
         Debug.Log("DRAGGING HAMMY");
+        Hamster.transform.parent = Camera.main.transform;
     }
 
     public virtual void OnEndDrag(PointerEventData eventData)
@@ -50,8 +51,7 @@ public class HamsterLocation : MonoBehaviour, IBeginDragHandler, IEndDragHandler
         }
         else
         {
-            Hamster.transform.position = _hamsterSpawnLocation.position;
-            Hamster.transform.rotation = _hamsterSpawnLocation.rotation;
+            Hamster = Hamster;
         }
     }
 
