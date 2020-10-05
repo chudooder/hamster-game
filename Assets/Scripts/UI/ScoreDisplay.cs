@@ -9,7 +9,14 @@ public class ScoreDisplay : MonoBehaviour
     
     void Start()
     {
-        GameManager.instance.ScoreListener += () =>
-            _text.text = GameManager.instance.CurrentScore.ToString();
+        GameManager.instance.ScoreListener += SetText;
+    }
+
+    private void SetText() {
+        _text.text = GameManager.instance.CurrentScore.ToString();
+    }
+
+    private void OnDestroy() {
+        GameManager.instance.ScoreListener -= SetText;
     }
 }

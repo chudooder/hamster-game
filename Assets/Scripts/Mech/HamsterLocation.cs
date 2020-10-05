@@ -32,7 +32,8 @@ public class HamsterLocation : MonoBehaviour, IBeginDragHandler, IEndDragHandler
     public virtual void OnBeginDrag(PointerEventData eventData)
     {
         if (!Hamster) return;
-        
+        HamsterCard.CurrentHamster = Hamster;
+
         Debug.Log("DRAGGING HAMMY");
         Hamster.transform.parent = Camera.main.transform;
     }
